@@ -1,0 +1,73 @@
+import java.util.Scanner;
+class Marks
+{
+int subject1,subject2,subject3,subject4,subject5;
+double total,average;
+void input()
+{
+Scanner sc=new Scanner(System.in);
+System.out.println("Enter Subject1 marks:");
+subject1=sc.nextInt();
+System.out.println("Enter Subject2 marks:");
+subject2=sc.nextInt();
+System.out.println("Enter Subject3 marks:");
+subject3=sc.nextInt();
+System.out.println("Enter Subject4 marks:");
+subject4=sc.nextInt();
+System.out.println("Enter Subject5 marks:");
+subject5=sc.nextInt();
+sc.close();
+}
+void calculateTotalAndAverage() 
+{
+  total=subject1+subject2+subject3+subject4+subject5;
+  average=total/5.0;
+}
+}
+class Grade extends Marks
+{
+char grade;
+void calculateGrade()
+{
+if(average>=90)
+{
+grade='A';
+}
+else if(average>=80)
+{
+grade='B';
+}
+else if(average>=70)
+{
+grade='C';
+}
+else if(average>=60)
+{
+grade='D';
+}
+else
+{
+grade='F';
+}
+}
+void display() 
+{
+System.out.println("Total marks of the Student:"+total);
+System.out.println("Average Percentage of the Student:"+average);
+System.out.println("Grade:"+grade);
+}
+}
+class NumberGrade
+{
+public static void main(String args[])
+{
+Grade g=new Grade();
+g.input();
+g.calculateTotalAndAverage();
+g.calculateGrade();
+g.display();
+}
+}
+
+
+
