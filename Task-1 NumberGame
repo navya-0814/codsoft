@@ -1,0 +1,41 @@
+import java.util.Scanner;
+class NumberGame
+{
+public static void playgame()
+{
+Scanner sc=new Scanner(System.in);
+int hno=1+(int)(100 * Math.random()),max=5,n,guess;
+System.out.println("Hello Player!Welcome to Number Game......");
+System.out.println("Choose a number between 1 to 100");
+System.out.println("We have only 5 attempts! To guess the number");
+System.out.println("Lets Start your game ....All the best player");
+for(n=0;n<max;n++)
+{
+System.out.println("Attempt"+(n+1)+":Enter your guess number");
+guess=sc.nextInt();
+if(hno==guess)
+{
+System.out.println("Congratualations!!!The number you guess is correct....");
+break;
+}
+else if(hno>guess && n!=max-1)
+{
+System.out.println("The Hidden number is greater than your guess...");
+}
+else if(hno<guess && n!=max-1)
+{
+System.out.println("The Hidden number is lesser than your guess...");
+}
+}
+if(n==max)
+{
+System.out.println("Your 5 Attempts is up ");
+System.out.print("The Hidden number is "+hno);
+}
+}
+public static void main(String args[])
+{
+playgame();
+}
+}
+
